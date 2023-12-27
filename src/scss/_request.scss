@@ -1,0 +1,294 @@
+.request {
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        padding: 7.8rem 8.4rem;
+
+        &.--big {
+            padding: 5rem;
+
+            .request__form-button {
+                width: 100%;
+            }
+        }
+
+        @include small-tablet {
+            flex-direction: column;
+            padding: 3.2rem;
+            gap: 4.8rem;
+        }
+
+        &-column {
+            flex-direction: column;
+        }
+    }
+    &__title {
+        max-width: 90%;
+
+        @include small-tablet {
+            max-width: unset;
+        }
+    }
+    &__text-container {
+        display: flex;
+        flex-direction: column;
+
+        gap: 3.4rem;
+        max-width: 66.6rem;
+
+        @include small-tablet {
+            gap: 1.6rem;
+        }
+    }
+    &__form {
+        display: grid;
+        grid-column-gap: 1.2rem;
+        grid-row-gap: 2.6rem;
+        width: 100%;
+        max-width: 81.4rem;
+
+        &-container {
+            width: 100%;
+            max-width: 81.4rem;
+
+            display: flex;
+            flex-direction: column;
+            gap: 2.8rem;
+        }
+
+        &.--grid-rows-3 {
+            grid-column-gap: 2.9rem;
+            grid-row-gap: 1.2rem;
+
+            @include small-tablet {
+                display: flex;
+                flex-direction: column;
+                gap: 1.6rem;
+            }
+
+            label {
+                grid-column: span 2;
+            }
+            .request__form-button,
+            .request__form-copyright {
+                margin-top: 1.6rem;
+            }
+        }
+        &-theme {
+            color: $white;
+            font-size: 1.6rem;
+            font-weight: 600;
+
+            @include small-tablet {
+                font-size: 3.6rem;
+            }
+        }
+
+        @include small-tablet {
+            display: flex;
+            flex-direction: column;
+            gap: 1.6rem;
+        }
+        label {
+            width: 100%;
+            input {
+                @include small-tablet {
+                    padding: 4.6rem 6.4rem;
+                }
+            }
+            input,
+            input::placeholder {
+                @include small-tablet {
+                    font-size: 3.2rem;
+                }
+            }
+        }
+        label[for='tel'] {
+            @include small-tablet {
+                margin-bottom: 0.8rem;
+            }
+        }
+        label[for='file'] {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 1.6rem;
+
+            svg {
+                cursor: pointer;
+            }
+            .file-description {
+                cursor: pointer;
+
+                color: $white;
+                font-size: 1.8rem;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+                letter-spacing: 0.18rem;
+                text-transform: uppercase;
+
+                @include small-tablet {
+                    font-size: 3.2rem;
+                }
+            }
+            input {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+            }
+        }
+        &-fields {
+            display: flex;
+            gap: 1.2rem;
+        }
+        &-field {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 3.5rem 4rem 3.1rem 4rem;
+        }
+        &-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: $blue;
+            width: fit-content;
+            padding: 3.3rem 7.05rem;
+
+            @include small-tablet {
+                width: 100%;
+                text-align: center;
+            }
+        }
+        &-copyright {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: 2.7rem;
+            color: #cde3f5;
+            font-size: 1.4rem;
+            font-weight: 400;
+
+            @include small-tablet {
+                display: block;
+                margin: 0;
+                font-size: 2.4rem;
+            }
+
+            a {
+                text-decoration: underline;
+            }
+        }
+    }
+    &__social {
+        grid-column: span 2;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        min-width: 81.4rem;
+        margin-top: 0;
+
+        &.--min-width-61 {
+            min-width: 61.6rem;
+        }
+
+        @include small-tablet {
+            padding: 1rem 1rem 1rem 4.8rem;
+            margin: 0;
+            width: 100%;
+            min-width: unset;
+            justify-content: space-between;
+        }
+        &-mt-3 {
+            margin-top: 3.2rem;
+        }
+        &-text {
+            margin-left: 4rem;
+            color: $white;
+            font-size: 1.8rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            max-width: 51.8rem;
+            width: 100%;
+
+            @include small-tablet {
+                margin: 0;
+                color: var(--white, #fff);
+                font-size: 2.4rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                max-width: 25rem;
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
+
+        &-icons {
+            display: grid;
+            grid-template-columns: repeat(2, 6.58rem);
+            gap: 0.4rem;
+
+            @include small-tablet {
+                grid-template-columns: repeat(2, 11rem);
+                gap: 0.8rem;
+            }
+
+            &-item {
+                width: 100%;
+                height: 6.58rem;
+
+                @include small-tablet {
+                    height: 11rem;
+                }
+
+                &.--telegramm a {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    svg {
+                        max-width: 2.7rem;
+                        width: 100%;
+                        height: 2.4rem;
+
+                        @include small-tablet {
+                            max-width: 4.8rem;
+                            height: 4rem;
+                        }
+                    }
+                    padding: 0;
+                }
+                &.--whatsapp a {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    svg {
+                        max-width: 2.4rem;
+                        width: 100%;
+                        height: 2.4rem;
+
+                        @include small-tablet {
+                            max-width: 4rem;
+                            height: 4rem;
+                        }
+                    }
+                    padding: 0;
+                }
+            }
+        }
+    }
+    &__box {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 5rem;
+
+        @include small-tablet {
+            gap: 2.4rem;
+            flex-direction: column;
+            margin-top: 0;
+        }
+    }
+}

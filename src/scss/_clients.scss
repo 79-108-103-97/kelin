@@ -1,0 +1,111 @@
+.clients {
+    &__content {
+        padding: 3.2rem;
+        padding-top: 5.2rem;
+    }
+    &__title {
+        margin-bottom: 3rem;
+
+        @include small-tablet {
+            margin-bottom: 1.6rem;
+        }
+    }
+    &__description {
+        margin-bottom: 4.4rem;
+        color: $text-secondary;
+
+        @include small-tablet {
+            margin-bottom: 4.8rem;
+        }
+    }
+    &-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.3rem;
+
+        @include small-tablet {
+            flex-wrap: unset;
+            gap: 0;
+        }
+
+        &__item {
+            padding: 4.4rem;
+            flex-grow: 1;
+            padding-right: 9.5rem;
+            width: auto;
+            height: auto;
+
+            @include small-tablet {
+                display: flex;
+                flex-direction: column;
+                gap: 1.6rem;
+                max-width: 58rem;
+                padding: 3.2rem;
+            }
+
+            &-row {
+                display: flex;
+                align-items: center;
+                gap: 2.8rem;
+
+                @include small-tablet {
+                    gap: 3.6rem;
+                }
+            }
+            &-image {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                width: 11.8rem;
+                height: 11.8rem;
+                border-radius: 50%;
+                padding: 3.6rem 1.8rem;
+                background-color: $white;
+
+                @include small-tablet {
+                    width: 12rem;
+                    height: 12rem;
+                }
+                img {
+                    height: auto;
+                }
+            }
+            &-title {
+                font-family: $font-family-URW;
+                font-size: 3.2rem;
+                font-weight: 400;
+                letter-spacing: 0.064rem;
+                text-transform: uppercase;
+                max-width: 47.6rem;
+
+                // @include clamp-line(1);
+
+                @include small-tablet {
+                    width: min-content;
+                    font-size: 4rem;
+                }
+            }
+            &-description {
+                max-width: 58.4rem;
+
+                // @include clamp-line(2);
+
+                // @include small-tablet {
+                //     @include clamp-line(5);
+                // }
+
+                &-simple {
+                    max-width: 69.2rem;
+                }
+            }
+        }
+    }
+
+    &-swiper {
+        width: 100%;
+        @include small-tablet {
+            // max-height: 38rem;
+        }
+    }
+}

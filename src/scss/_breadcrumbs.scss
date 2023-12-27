@@ -1,0 +1,82 @@
+@import 'vars';
+@import 'mixins';
+
+.center-breadcrumbs {
+    margin-bottom: 4rem;
+    &-list {
+        justify-content: center;
+
+        @include small-tablet{
+            justify-content: flex-start;
+            padding-left: 4rem;
+        }
+    }
+}
+.breadcrumbs {
+    // margin-bottom: 3.8rem;
+    margin-bottom: 6rem;
+    @include small-tablet {
+        margin-bottom: 3.2rem;
+    }
+
+    &__list {
+        display: flex;
+        align-items: center;
+        gap: 4.4rem;
+        flex-wrap: wrap;
+
+        @include small-tablet {
+            flex-wrap: nowrap;
+            overflow-x: scroll;
+            white-space: nowrap;
+            gap: 6.4rem;
+            margin-right: -2rem;
+            padding-right: 2rem;
+            scrollbar-width: none; /* For Firefox */
+            -ms-overflow-style: none; /* For Internet Explorer and Edge */
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+    }
+
+    &__item {
+        position: relative;
+
+        a {
+            color: $text-secondary;
+            font-size: 2.3rem;
+            font-weight: 400;
+            line-height: 2.875rem;
+
+            @include small-tablet {
+                font-size: 3.6rem;
+                line-height: 4.5rem;
+            }
+        }
+
+        &:not(:first-child) {
+            &::after {
+                @include pseudo {
+                    width: 2.4rem;
+                    height: 0.1rem;
+                    background: $text-secondary;
+                    left: -3.4rem;
+                    top: 50%;
+                    transform: translateY(-50%);
+
+                    @include small-tablet {
+                        width: 3.2rem;
+                        left: -4.8rem;
+                    }
+                }
+            }
+        }
+
+        &:last-child {
+            a {
+                font-weight: 700;
+            }
+        }
+    }
+}

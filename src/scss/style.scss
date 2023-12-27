@@ -1,0 +1,50 @@
+// Global SCSS-files imports
+@import './vars';
+@import './reset';
+@import './fonts';
+@import './global';
+@import './components';
+
+// Libs
+@import './libs/YMaps';
+@import './libs/swiper';
+
+//Sections or Pages SCSS-files imports
+@import './header';
+@import './breadcrumbs';
+@import './insights';
+@import './article';
+@import './insights-form';
+@import './footer';
+@import './404';
+@import './privacy';
+@import './contacts';
+@import './main';
+@import './business-areas';
+@import './businesses-needs';
+@import './our-work';
+@import './about-us';
+@import './modals';
+@import './hero';
+@import './benefits';
+@import './clock';
+@import './radar';
+@import './planets';
+@import './request';
+@import './clients';
+@import './protection';
+@import './tu-letters';
+@import './skills-industry';
+@import './talents';
+@import './accompaniment';
+@import './processes';
+@import './numbered-details';
+@import './individual-calc';
+@import './price';
+@import './compass';
+@import './section-article';
+@import './links';
+@import './marquee';
+@import './intro';
+@import './helping';
+@import './cases';

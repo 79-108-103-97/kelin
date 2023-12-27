@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Index</title>
+        <link rel="stylesheet" href="./css/style.min.css" />
+    </head>
+
+    <body class="main__body background__contacts-page">
+        <!-- Header -->
+        @@include('./html/_header.html')
+
+        <!-- Main Page -->
+        <main>
+            @@include('./html/_breadcrumbs.html',{ "page": "Контакты"}) @@include('./html/_contacts.html')
+        </main>
+
+        <!-- Footer -->
+        @@include('./html/_footer.html')
+    </body>
+    <script
+        src="https://api-maps.yandex.ru/2.1/?apikey=c9e39c09-0f62-4828-b0ce-7ca99a606b15&lang=ru_RU"
+        type="text/javascript"
+    ></script>
+    <script>
+        ymaps.ready(init);
+
+        function init() {
+            let map = new ymaps.Map('contacts-map', {
+                center: [55.76251827514453, 37.63556146699713],
+                zoom: 12
+            });
+
+            let placemark = new ymaps.Placemark([55.76251827514453, 37.63556146699713], {
+                balloonContentHeader: 'ООО «КЕЛИН» ИНН 9706007244',
+                balloonContentBody: 'г. Москва, улица Мясницкая, дом 24/7, строение 1'
+            }, {
+                preset: 'islands#redDotIconWithCaption'
+            });
+
+            map.controls.remove('geolocationControl'); // удаляем геолокацию
+            map.controls.remove('searchControl'); // удаляем поиск
+            map.controls.remove('trafficControl'); // удаляем контроль трафика
+            map.controls.remove('typeSelector'); // удаляем тип
+            map.controls.remove('fullscreenControl'); // удаляем кнопку перехода в полноэкранный режим
+            map.controls.remove('zoomControl'); // удаляем контрол зуммирования
+            map.controls.remove('rulerControl'); // удаляем контрол правил
+
+            map.geoObjects.add(placemark);
+        }
+    </script>
+    <script src="./js/scripts.min.js"></script>
+</html>

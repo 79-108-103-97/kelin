@@ -1,0 +1,69 @@
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('../fonts/ProximaNovaRegular.eot');
+    src:
+        url('../fonts/ProximaNovaRegular.eot') format('embedded-opentype'),
+        url('../fonts/ProximaNovaRegular.woff2') format('woff2'),
+        url('../fonts/ProximaNovaRegular.woff') format('woff'),
+        url('../fonts/ProximaNovaRegular.ttf') format('truetype'),
+        url('../fonts/ProximaNovaRegular.svg#ProximaNovaRegular') format('svg');
+    font-style: normal;
+    font-display: swap;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('../fonts/ProximaNovaSemibold.eot');
+    src:
+        url('../fonts/ProximaNovaSemibold.eot') format('embedded-opentype'),
+        url('../fonts/ProximaNovaSemibold.woff2') format('woff2'),
+        url('../fonts/ProximaNovaSemibold.woff') format('woff'),
+        url('../fonts/ProximaNovaSemibold.ttf') format('truetype'),
+        url('../fonts/ProximaNovaSemibold.svg#ProximaNovaSemibold') format('svg');
+    font-style: normal;
+    font-display: swap;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Proxima Nova';
+    src: url('../fonts/ProximaNovaBold.eot');
+    src:
+        url('../fonts/ProximaNovaBold.eot') format('embedded-opentype'),
+        url('../fonts/ProximaNovaBold.woff2') format('woff2'),
+        url('../fonts/ProximaNovaBold.woff') format('woff'),
+        url('../fonts/ProximaNovaBold.ttf') format('truetype'),
+        url('../fonts/ProximaNovaBold.svg#ProximaNovaBold') format('svg');
+    font-style: normal;
+    font-display: swap;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'URW Geometric Extended';
+    src: url('../fonts/URWGeometricExtBold.eot');
+    src:
+        url('../fonts/URWGeometricExtBold.eot') format('embedded-opentype'),
+        url('../fonts/URWGeometricExtBold.woff2') format('woff2'),
+        url('../fonts/URWGeometricExtBold.woff') format('woff'),
+        url('../fonts/URWGeometricExtBold.ttf') format('truetype'),
+        url('../fonts/URWGeometricExtBold.svg#URWGeometricExtBold') format('svg');
+    font-style: normal;
+    font-display: swap;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'URW Geometric Extended';
+    src: url('../fonts/URWGeometricExtHeavy.eot');
+    src:
+        url('../fonts/URWGeometricExtHeavy.eot') format('embedded-opentype'),
+        url('../fonts/URWGeometricExtHeavy.woff2') format('woff2'),
+        url('../fonts/URWGeometricExtHeavy.woff') format('woff'),
+        url('../fonts/URWGeometricExtHeavy.ttf') format('truetype'),
+        url('../fonts/URWGeometricExtHeavy.svg#URWGeometricExtHeavy') format('svg');
+    font-style: normal;
+    font-display: swap;
+    font-weight: 900;
+}

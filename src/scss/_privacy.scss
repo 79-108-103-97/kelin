@@ -1,0 +1,145 @@
+@import 'vars';
+@import 'mixins';
+
+.privacy {
+    &__content {
+        padding: 5rem;
+        @include small-tablet {
+            padding: 5.2rem 3.2rem;
+        }
+    }
+
+    &__title {
+        margin-bottom: 4.4rem;
+        @include small-tablet {
+            margin-bottom: 4.8rem;
+        }
+    }
+
+    &__info-block {
+        padding: 5rem;
+        margin-bottom: 8rem;
+        @include small-tablet {
+            padding: 3.2rem;
+        }
+    }
+
+    &__description {
+        color: $blue;
+        font-size: 2.3rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 2.875rem;
+        @include small-tablet {
+            font-size: 3.6rem;
+            line-height: 4.6rem;
+        }
+    }
+
+    &__block {
+        margin-bottom: 8rem;
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        &-title {
+            color: $text-primary;
+            font-family: $font-family-URW;
+            font-size: 3.2rem;
+            font-weight: 400;
+            line-height: normal;
+            letter-spacing: 0.064rem;
+            text-transform: uppercase;
+            margin-bottom: 4.4rem;
+
+            @include small-tablet {
+                font-size: 4rem;
+                margin-bottom: 1.6rem;
+            }
+        }
+
+        &-text {
+            color: $text-primary;
+            font-size: 2.3rem;
+            font-weight: 400;
+            line-height: 2.875rem;
+            margin-bottom: 1rem;
+            overflow-wrap: break-word;
+
+            @include small-tablet {
+                font-size: 3.6rem;
+                line-height: 4.7rem;
+                text-overflow: ellipsis;
+            }
+
+            &-container {
+                &:last-child {
+                    margin-bottom: 0;
+                }
+
+                @include small-tablet {
+                    overflow: hidden;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    margin-bottom: 1.6rem;
+                    max-height: 63.6rem;
+                    transition: max-height 0.5s ease-in-out;
+
+                    &.hide-text {
+                        -webkit-line-clamp: 13;
+                    }
+                    &.show-text {
+                        -webkit-line-clamp: inherit;
+                        max-height: 400rem;
+                    }
+                }
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            a {
+                text-decoration-line: underline;
+            }
+        }
+        &-link {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            font-size: 3.2rem;
+            color: #00589b;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.32rem;
+        }
+
+        &-list {
+            margin-bottom: 1rem;
+            padding-left: 3rem;
+
+            @include small-tablet {
+                padding: 0;
+            }
+        }
+
+        &-item {
+            list-style: initial;
+
+            @include small-tablet {
+                list-style: none;
+                margin-bottom: 1.6rem;
+            }
+            p {
+                margin: 0;
+            }
+
+            &::marker {
+                color: $text-primary;
+                font-size: 1.2em;
+            }
+        }
+    }
+}

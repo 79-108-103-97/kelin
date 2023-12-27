@@ -1,0 +1,173 @@
+@import 'vars';
+@import 'mixins';
+
+.feature {
+    &__content {
+        @include small-tablet {
+            padding: 3.2rem;
+            padding-top: 5.2rem;
+        }
+    }
+    &__title {
+        max-width: 101.5rem;
+        margin-bottom: 4.4rem;
+
+        @include small-tablet {
+            margin-bottom: 4.8rem;
+        }
+    }
+    &__list {
+        display: flex;
+        gap: 1.2rem;
+
+        @include small-tablet {
+            flex-direction: column;
+            gap: 2.4rem;
+        }
+    }
+    &__item {
+        position: relative;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 2.4rem;
+        overflow: hidden;
+
+        &::after {
+            @include pseudo {
+                background-image: url('../img/main//line-red.svg');
+                background-repeat: no-repeat;
+                background-position: center;
+                inset: 0;
+                transform: scale(2.5);
+            }
+        }
+
+        &-title {
+            color: $text-secondary;
+        }
+        &-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+
+            &-item {
+                width: fit-content;
+                padding: 1.3rem 3rem;
+                background-color: $white;
+                border-radius: 5rem;
+            }
+        }
+    }
+}
+.video {
+    &__content {
+        position: relative;
+        padding-bottom: 17rem;
+
+        @include small-tablet {
+            padding: 3.2rem;
+            padding-top: 5.2rem;
+            padding-bottom: 9.2rem;
+        }
+    }
+    &__title {
+        max-width: 87.1rem;
+        margin-bottom: 4.4rem;
+        @include small-tablet {
+            margin-bottom: 4.8rem;
+        }
+    }
+    &__player {
+        border-radius: 5rem;
+
+        &-box {
+            height: 69.4743rem;
+            -webkit-mask-image: url('../img/video-mask.svg');
+            mask-image: url('../img/video-mask.svg');
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+            -webkit-mask-size: contain;
+            mask-size: contain;
+
+            @include small-tablet {
+                -webkit-mask-image: url('../img/video-mask-mb.svg');
+                mask-image: url('../img/video-mask-mb.svg');
+                width: 64.6rem;
+                height: 39.8rem;
+            }
+            video {
+                // height: 100%;
+                object-fit: cover;
+            }
+        }
+        &-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            cursor: pointer;
+            width: 22.8rem;
+            height: 22.8rem;
+            border-radius: 50%;
+            border: none;
+            background-color: $blue;
+            bottom: 5rem;
+            left: 72.8rem;
+            border: 0.1rem solid transparent;
+
+            &:hover {
+                background-color: $grey;
+                border-color: $blue;
+                path {
+                    fill: $blue;
+                }
+            }
+
+            @include small-tablet {
+                width: 12rem;
+                height: 12rem;
+                bottom: 3.2rem;
+                left: 29.6rem;
+
+                svg {
+                    width: 4rem;
+                    height: 3rem;
+                }
+            }
+        }
+    }
+}
+.category-list-swiper {
+    margin-bottom: 4.4rem;
+
+    &__container {
+        position: relative;
+    }
+    &-button {
+        z-index: 3;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 8.5rem;
+        height: 8.5rem;
+        border-radius: 50%;
+        border: 0.2rem solid $white;
+
+        @include small-tablet {
+            display: none;
+        }
+
+        &-next {
+            position: absolute;
+            bottom: 0;
+            right: -10rem;
+        }
+        &-prev {
+            position: absolute;
+            bottom: 0;
+            left: -10rem;
+        }
+    }
+}

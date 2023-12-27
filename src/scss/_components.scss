@@ -1,0 +1,292 @@
+@import 'vars';
+@import 'mixins';
+
+.section-title {
+    color: $text-primary;
+    font-size: 6rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 6rem;
+    font-family: $font-family-URW;
+
+    span {
+        color: $blue;
+    }
+    &.mw-100 {
+        max-width: 100rem;
+    }
+}
+
+.section-title-lite {
+    @extend .section-title !optional;
+    color: $grey;
+
+    span {
+        color: $white;
+    }
+}
+.title-h2 {
+    color: $text-primary;
+    font-family: $font-family-URW;
+    font-size: 3.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.064rem;
+    text-transform: uppercase;
+
+    @include small-tablet {
+        font-size: 4rem;
+    }
+
+    span {
+        color: $blue;
+    }
+}
+.title-h2-blue {
+    @extend .title-h2 !optional;
+    color: $blue;
+}
+.title-h2-lite {
+    @extend .title-h2 !optional;
+    color: $white;
+}
+
+.title-h3 {
+    color: $text-primary;
+    font-family: $font-family-URW;
+    font-size: 2.2rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.044rem;
+    text-transform: uppercase;
+
+    @include small-tablet {
+        font-size: 3.6rem;
+    }
+
+    span {
+        color: $blue;
+    }
+}
+
+.title-h3-lite {
+    @extend .title-h3 !optional;
+    color: $white;
+}
+.title-h3-blue {
+    @extend .title-h3 !optional;
+    color: $blue;
+}
+.text-regular {
+    color: $text-primary;
+    font-family: $font-family;
+    font-size: 2.3rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 2.875rem;
+
+    @include small-tablet {
+        font-size: 3.6rem;
+        line-height: 4.5rem;
+    }
+
+    span {
+        font-weight: 700;
+    }
+}
+.text-regular-lite {
+    @extend .text-regular !optional;
+    color: $white;
+}
+
+.text-regular-blue {
+    @extend .text-regular !optional;
+    color: $blue;
+}
+
+.button {
+    @include button();
+}
+
+.button-outlined {
+    @include button-outlined();
+}
+
+.button-white {
+    @include button(3rem, 3.3rem, $white) {
+        color: $blue;
+        font-size: 1.6rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 0.16rem;
+        text-transform: uppercase;
+    }
+}
+
+.background-blur {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 14.39%, rgba(255, 255, 255, 0) 182.55%);
+    padding: 5rem;
+    border-radius: 4rem;
+}
+
+.background-blur-bordered {
+    @extend .background-blur !optional;
+    border: 0.1rem solid $white;
+}
+
+.background-blue {
+    background: $blue;
+    border-radius: 4rem;
+}
+.mb-12 {
+    margin-bottom: 12rem;
+}
+.mb-8 {
+    margin-bottom: 8rem;
+}
+.mb-4 {
+    margin-bottom: 4.4rem;
+}
+.arrow-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transition: 0.3s opacity ease-out;
+
+    img {
+        width: 4.6rem;
+        height: 2rem;
+        transition: 0.3s transform ease-out;
+    }
+
+    span {
+        color: $blue;
+        font-size: 1.8rem;
+        font-weight: 600;
+        letter-spacing: 0.18rem;
+        text-transform: uppercase;
+    }
+
+    &:hover {
+        img {
+            transform: translateX(0.5rem);
+        }
+
+        opacity: 0.85;
+    }
+}
+
+.link-blue {
+    transition: 0.3s color ease-out;
+
+    &:hover {
+        color: $blue;
+    }
+}
+
+.image-scale {
+    overflow: hidden;
+
+    &:hover {
+        img {
+            transform: scale(1.15);
+        }
+    }
+
+    img {
+        transition: 0.3s transform ease-out;
+    }
+}
+
+.input-field {
+    position: relative;
+
+    border-radius: 10rem;
+    border: 0.1rem solid $white;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 14.39%, rgba(255, 255, 255, 0) 182.55%);
+    backdrop-filter: blur(5rem);
+    color: $text-primary;
+    font-size: 1.8rem;
+    font-weight: 700;
+
+    &::placeholder {
+        color: $text-secondary;
+        font-size: 1.6rem;
+        font-weight: 600;
+    }
+}
+input {
+    &.not-valid {
+        border: 0.1rem solid $blue;
+    }
+}
+.not-valid__mes {
+    z-index: 3;
+    position: absolute;
+    bottom: -65%;
+    left: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: 5rem;
+    background: $white;
+    box-shadow: 0.1rem 0.1rem 1rem 0rem $grey;
+    padding: 2rem;
+    border-radius: 1rem;
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+    @include small-tablet {
+        font-size: 3.2rem;
+        padding: 4rem;
+    }
+
+    &::before {
+        @include pseudo {
+        }
+        top: -20%;
+        left: 50%;
+        width: 3rem;
+        height: 3rem;
+        background: $white;
+        transform: rotate(45deg);
+        z-index: -1;
+    }
+}
+q {
+    background: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        color-stop(14.39%, rgba(255, 255, 255, 0.5)),
+        color-stop(182.55%, rgba(255, 255, 255, 0))
+    );
+    background: -o-linear-gradient(top, rgba(255, 255, 255, 0.5) 14.39%, rgba(255, 255, 255, 0) 182.55%);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 14.39%, rgba(255, 255, 255, 0) 182.55%);
+    border: 0.1rem solid #fff;
+    padding: 5rem;
+    border-radius: 4rem;
+
+    color: $blue;
+    font-size: 2.3rem;
+    font-weight: 700;
+    line-height: 2.875rem;
+
+    @include small-tablet {
+        padding: 3.2rem;
+        font-size: 3.6rem;
+        line-height: 4.5rem;
+        margin-top: 4rem;
+    }
+
+    &::after,
+    &::before {
+        content: none;
+    }
+}
